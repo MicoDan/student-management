@@ -26,7 +26,7 @@ export const updateStudentFields = (id, fields, address) => async (dispatch) => 
     dispatch(getRequest());
 
     try {
-        const result = await axios.put(`/${address}/${id}`, fields, {
+        const result = await axios.put(`https://student-management-backend-coral.vercel.app/${address}/${id}`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.message) {
