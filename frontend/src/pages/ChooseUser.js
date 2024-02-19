@@ -50,18 +50,6 @@ const ChooseUser = ({ visitor }) => {
         navigate('/Studentlogin');
       }
     }
-
-    else if (user === "Teacher") {
-      if (visitor === "guest") {
-        const email = "tony@12"
-        const fields = { email, password }
-        setLoader(true)
-        dispatch(loginUser(fields, user))
-      }
-      else {
-        navigate('/Teacherlogin');
-      }
-    }
   }
 
   useEffect(() => {
@@ -71,9 +59,7 @@ const ChooseUser = ({ visitor }) => {
       }
       else if (currentRole === 'Student') {
         navigate('/Student/dashboard');
-      } else if (currentRole === 'Teacher') {
-        navigate('/Teacher/dashboard');
-      }
+      } 
     }
     else if (status === 'error') {
       setLoader(false)
@@ -109,19 +95,6 @@ const ChooseUser = ({ visitor }) => {
                   Student
                 </StyledTypography>
                 Login as a student to explore course materials and assignments.
-              </div>
-            </StyledPaper>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <StyledPaper elevation={3}>
-              <div onClick={() => navigateHandler("Teacher")}>
-                <Box mb={2}>
-                  <Group fontSize="large" />
-                </Box>
-                <StyledTypography>
-                  Teacher
-                </StyledTypography>
-                Login as a teacher to create courses, assignments, and track student progress.
               </div>
             </StyledPaper>
           </Grid>

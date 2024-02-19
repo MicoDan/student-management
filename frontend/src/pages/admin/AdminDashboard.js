@@ -31,12 +31,6 @@ import ShowSubjects from './subjectRelated/ShowSubjects';
 import SubjectForm from './subjectRelated/SubjectForm';
 import ViewSubject from './subjectRelated/ViewSubject';
 
-import AddTeacher from './teacherRelated/AddTeacher';
-import ChooseClass from './teacherRelated/ChooseClass';
-import ChooseSubject from './teacherRelated/ChooseSubject';
-import ShowTeachers from './teacherRelated/ShowTeachers';
-import TeacherDetails from './teacherRelated/TeacherDetails';
-
 import AddClass from './classRelated/AddClass';
 import ClassDetails from './classRelated/ClassDetails';
 import ShowClasses from './classRelated/ShowClasses';
@@ -105,7 +99,7 @@ const AdminDashboard = () => {
                         {/* Subject */}
                         <Route path="/Admin/subjects" element={<ShowSubjects />} />
                         <Route path="/Admin/subjects/subject/:classID/:subjectID" element={<ViewSubject />} />
-                        <Route path="/Admin/subjects/chooseclass" element={<ChooseClass situation="Subject" />} />
+
 
                         <Route path="/Admin/addsubject/:id" element={<SubjectForm />} />
                         <Route path="/Admin/class/subject/:classID/:subjectID" element={<ViewSubject />} />
@@ -125,14 +119,6 @@ const AdminDashboard = () => {
                         <Route path="/Admin/students/student/:id" element={<ViewStudent />} />
                         <Route path="/Admin/students/student/attendance/:id" element={<StudentAttendance situation="Student" />} />
                         <Route path="/Admin/students/student/marks/:id" element={<StudentExamMarks situation="Student" />} />
-
-                        {/* Teacher */}
-                        <Route path="/Admin/teachers" element={<ShowTeachers />} />
-                        <Route path="/Admin/teachers/teacher/:id" element={<TeacherDetails />} />
-                        <Route path="/Admin/teachers/chooseclass" element={<ChooseClass situation="Teacher" />} />
-                        <Route path="/Admin/teachers/choosesubject/:id" element={<ChooseSubject situation="Norm" />} />
-                        <Route path="/Admin/teachers/choosesubject/:classID/:teacherID" element={<ChooseSubject situation="Teacher" />} />
-                        <Route path="/Admin/teachers/addteacher/:id" element={<AddTeacher />} />
 
                         <Route path="/logout" element={<Logout />} />
                     </Routes>

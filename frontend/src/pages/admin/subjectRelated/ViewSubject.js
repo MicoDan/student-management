@@ -164,16 +164,6 @@ const ViewSubject = () => {
         <Typography variant="h6" gutterBottom>
           Class Name : {subjectDetails && subjectDetails.sclassName && subjectDetails.sclassName.sclassName}
         </Typography>
-        {subjectDetails && subjectDetails.teacher ?
-          <Typography variant="h6" gutterBottom>
-            Teacher Name : {subjectDetails.teacher.name}
-          </Typography>
-          :
-          <GreenButton variant="contained"
-            onClick={() => navigate("/Admin/teachers/addteacher/" + subjectDetails._id)}>
-            Add Subject Teacher
-          </GreenButton>
-        }
       </>
     );
   }

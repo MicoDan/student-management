@@ -43,8 +43,9 @@ const userSlice = createSlice({
         },
         authError: (state, action) => {
             state.status = 'error';
-            state.error = action.payload;
+            state.error = action.payload.message; 
         },
+        
         authLogout: (state) => {
             localStorage.removeItem('user');
             state.currentUser = null;
@@ -75,7 +76,7 @@ const userSlice = createSlice({
         },
         getError: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = action.payload.message;
         },
         toggleDarkMode: (state) => {
             state.darkMode = !state.darkMode;
