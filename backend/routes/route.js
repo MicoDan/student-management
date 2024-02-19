@@ -1,102 +1,103 @@
-const router = require('express').Router();
+    const router = require('express').Router();
 
-// const { adminRegister, adminLogIn, deleteAdmin, getAdminDetail, updateAdmin } = require('../controllers/admin-controller.js');
+    const { adminRegister, adminLogIn, deleteAdmin, getAdminDetail, updateAdmin } = require('../controllers/admin-controller.js');
 
-const { adminRegister, adminLogIn, getAdminDetail} = require('../controllers/admin-controller.js');
+    // const { adminRegister, adminLogIn, getAdminDetail} = require('../controllers/admin-controller.js');
 
-const { sclassCreate, sclassList, deleteSclass, deleteSclasses, getSclassDetail, getSclassStudents } = require('../controllers/class-controller.js');
-const { complainCreate, complainList } = require('../controllers/complain-controller.js');
-const { noticeCreate, noticeList, deleteNotices, deleteNotice, updateNotice } = require('../controllers/notice-controller.js');
-const {
-    studentRegister,
-    studentLogIn,
-    getStudents,
-    getStudentDetail,
-    deleteStudents,
-    deleteStudent,
-    updateStudent,
-    studentAttendance,
-    deleteStudentsByClass,
-    updateExamResult,
-    clearAllStudentsAttendanceBySubject,
-    clearAllStudentsAttendance,
-    removeStudentAttendanceBySubject,
-    removeStudentAttendance } = require('../controllers/student_controller.js');
-const { subjectCreate, classSubjects, deleteSubjectsByClass, getSubjectDetail, deleteSubject, freeSubjectList, allSubjects, deleteSubjects } = require('../controllers/subject-controller.js');
-// Admin
-router.post('/AdminReg', adminRegister);
-router.post('/AdminLogin', adminLogIn);
+    const { sclassCreate, sclassList, deleteSclass, deleteSclasses, getSclassDetail, getSclassStudents } = require('../controllers/class-controller.js');
+    const { complainCreate, complainList } = require('../controllers/complain-controller.js');
+    const { noticeCreate, noticeList, deleteNotices, deleteNotice, updateNotice } = require('../controllers/notice-controller.js');
+    const {
+        studentRegister,
+        studentLogIn,
+        getStudents,
+        getStudentDetail,
+        deleteStudents,
+        deleteStudent,
+        updateStudent,
+        studentAttendance,
+        deleteStudentsByClass,
+        updateExamResult,
+        clearAllStudentsAttendanceBySubject,
+        clearAllStudentsAttendance,
+        removeStudentAttendanceBySubject,
+        removeStudentAttendance } = require('../controllers/student_controller.js');
+    const { subjectCreate, classSubjects, deleteSubjectsByClass, getSubjectDetail, deleteSubject, freeSubjectList, allSubjects, deleteSubjects } = require('../controllers/subject-controller.js');
+    // Admin
+    router.post('/AdminReg', adminRegister);
+    router.post('/AdminLogin', adminLogIn);
 
-router.get("/Admin/:id", getAdminDetail)
-// router.delete("/Admin/:id", deleteAdmin)
+    router.get("/Admin/:id", getAdminDetail)
 
-// router.put("/Admin/:id", updateAdmin)
+    router.delete("/Admin/:id", deleteAdmin)
 
-// Student
+    router.put("/Admin/:id", updateAdmin)
 
-router.post('/StudentReg', studentRegister);
-router.post('/StudentLogin', studentLogIn)
+    // Student
 
-router.get("/Students/:id", getStudents)
-router.get("/Student/:id", getStudentDetail)
+    router.post('/StudentReg', studentRegister);
+    router.post('/StudentLogin', studentLogIn)
 
-router.delete("/Students/:id", deleteStudents)
-router.delete("/StudentsClass/:id", deleteStudentsByClass)
-router.delete("/Student/:id", deleteStudent)
+    router.get("/Students/:id", getStudents)
+    router.get("/Student/:id", getStudentDetail)
 
-router.put("/Student/:id", updateStudent)
+    router.delete("/Students/:id", deleteStudents)
+    router.delete("/StudentsClass/:id", deleteStudentsByClass)
+    router.delete("/Student/:id", deleteStudent)
 
-router.put('/UpdateExamResult/:id', updateExamResult)
+    router.put("/Student/:id", updateStudent)
 
-router.put('/StudentAttendance/:id', studentAttendance)
+    router.put('/UpdateExamResult/:id', updateExamResult)
 
-router.put('/RemoveAllStudentsSubAtten/:id', clearAllStudentsAttendanceBySubject);
-router.put('/RemoveAllStudentsAtten/:id', clearAllStudentsAttendance);
+    router.put('/StudentAttendance/:id', studentAttendance)
 
-router.put('/RemoveStudentSubAtten/:id', removeStudentAttendanceBySubject);
-router.put('/RemoveStudentAtten/:id', removeStudentAttendance)
+    router.put('/RemoveAllStudentsSubAtten/:id', clearAllStudentsAttendanceBySubject);
+    router.put('/RemoveAllStudentsAtten/:id', clearAllStudentsAttendance);
+
+    router.put('/RemoveStudentSubAtten/:id', removeStudentAttendanceBySubject);
+    router.put('/RemoveStudentAtten/:id', removeStudentAttendance)
 
 
-// Notice
+    // Notice
 
-router.post('/NoticeCreate', noticeCreate);
+    router.post('/NoticeCreate', noticeCreate);
 
-router.get('/NoticeList/:id', noticeList);
+    router.get('/NoticeList/:id', noticeList);
 
-router.delete("/Notices/:id", deleteNotices)
-router.delete("/Notice/:id", deleteNotice)
+    router.delete("/Notices/:id", deleteNotices)
+    router.delete("/Notice/:id", deleteNotice)
 
-router.put("/Notice/:id", updateNotice)
+    router.put("/Notice/:id", updateNotice)
 
-// Complain
+    // Complain
 
-router.post('/ComplainCreate', complainCreate);
+    router.post('/ComplainCreate', complainCreate);
 
-router.get('/ComplainList/:id', complainList);
+    router.get('/ComplainList/:id', complainList);
 
-// Sclass
+    // Sclass
 
-router.post('/SclassCreate', sclassCreate);
+    router.post('/SclassCreate', sclassCreate);
 
-router.get('/SclassList/:id', sclassList);
-router.get("/Sclass/:id", getSclassDetail)
+    router.get('/SclassList/:id', sclassList);
+    router.get("/Sclass/:id", getSclassDetail)
 
-router.get("/Sclass/Students/:id", getSclassStudents)
+    router.get("/Sclass/Students/:id", getSclassStudents)
 
-router.delete("/Sclasses/:id", deleteSclasses)
-router.delete("/Sclass/:id", deleteSclass)
+    router.delete("/Sclasses/:id", deleteSclasses)
+    router.delete("/Sclass/:id", deleteSclass)
 
-// Subject
+    // Subject
 
-router.post('/SubjectCreate', subjectCreate);
+    router.post('/SubjectCreate', subjectCreate);
 
-router.get('/AllSubjects/:id', allSubjects);
-router.get('/ClassSubjects/:id', classSubjects);
-router.get('/FreeSubjectList/:id', freeSubjectList);
-router.get("/Subject/:id", getSubjectDetail)
+    router.get('/AllSubjects/:id', allSubjects);
+    router.get('/ClassSubjects/:id', classSubjects);
+    router.get('/FreeSubjectList/:id', freeSubjectList);
+    router.get("/Subject/:id", getSubjectDetail)
 
-router.delete("/Subject/:id", deleteSubject)
-router.delete("/Subjects/:id", deleteSubjects)
-router.delete("/SubjectsClass/:id", deleteSubjectsByClass)
+    router.delete("/Subject/:id", deleteSubject)
+    router.delete("/Subjects/:id", deleteSubjects)
+    router.delete("/SubjectsClass/:id", deleteSubjectsByClass)
 
-module.exports = router;
+    module.exports = router;

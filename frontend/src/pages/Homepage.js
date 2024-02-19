@@ -15,14 +15,10 @@ const Homepage = () => {
                 <Grid item xs={12} md={6}>
                     <StyledPaper elevation={3}>
                         <StyledTitle>
-                            Welcome to
-                            <br />
-                            School Management
-                            <br />
-                            System
+                            Welcome to the Student management System
                         </StyledTitle>
                         <StyledText>
-                            Streamline school management, class organization, and add students and faculty.
+                            Streamline student management, class organization, and add students and faculty.
                             Seamlessly track attendance, assess performance, and provide feedback.
                             Access records, view marks, and communicate effortlessly.
                         </StyledText>

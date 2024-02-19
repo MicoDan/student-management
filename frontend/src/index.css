@@ -93,3 +93,44 @@ a {
     border-radius: 12px;
   }
 }
+
+.FormContainer{
+display: flex;
+flex-direction: column;
+}
+
+.FormLabel{
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.FormInput{
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.FormButton{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50; /* Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.FormButton:hover {
+  background-color: #023b05; /* Darker green */
+}
+
+
+.StyledTypography{
+  margin-top: 20px;
+}
