@@ -17,7 +17,7 @@ export const loginUser = (fields, role) => async (dispatch) => {
     dispatch(authRequest());
 
     try {
-        const result = await axios.post(`http://localhost:5000/${role}Login`, fields, {
+        const result = await axios.post(`https://student-management-backend-coral.vercel.app/${role}Login`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.role) {
@@ -34,7 +34,7 @@ export const registerUser = (fields, role) => async (dispatch) => {
     dispatch(authRequest());
 
     try {
-        const result = await axios.post(`http://localhost:5000/${role}Reg`, fields, {
+        const result = await axios.post(`https://student-management-backend-coral.vercel.app/${role}Reg`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.schoolName) {
@@ -59,7 +59,7 @@ export const getUserDetails = (id, address) => async (dispatch) => {
     dispatch(getRequest());
 
     try {
-        const result = await axios.get(`http://localhost:5000/${address}/${id}`);
+        const result = await axios.get(`https://student-management-backend-coral.vercel.app/${address}/${id}`);
         if (result.data) {
             dispatch(doneSuccess(result.data));
         }
@@ -72,7 +72,7 @@ export const deleteUser = (id, address) => async (dispatch) => {
     dispatch(getRequest());
 
     try {
-        const result = await axios.delete(`http://localhost:5000/${address}/${id}`);
+        const result = await axios.delete(`https://student-management-backend-coral.vercel.app/${address}/${id}`);
         if (result.data.message) {
             dispatch(getFailed(result.data.message));
         } else {
@@ -93,7 +93,7 @@ export const updateUser = (fields, id, address) => async (dispatch) => {
     dispatch(getRequest());
 
     try {
-        const result = await axios.put(`http://localhost:5000/${address}/${id}`, fields, {
+        const result = await axios.put(`https://student-management-backend-coral.vercel.app/${address}/${id}`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.schoolName) {
@@ -114,7 +114,7 @@ export const addStuff = (fields, address) => async (dispatch) => {
     dispatch(authRequest());
 
     try {
-        const result = await axios.post(`http://localhost:5000/${address}Create`, fields, {
+        const result = await axios.post(`https://student-management-backend-coral.vercel.app/${address}Create`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
 
